@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1003822582399-752linrcli923jip6tpdajscf9bu41np.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1003822582399-752linrcli923jip6tpdajscf9bu41np</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBrv18pqzzZRfVr3lavejuNsc3rPdxLDZ4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1003822582399</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>edu.nwmissouri.Cricket-Fantasy</string>
+	<key>PROJECT_ID</key>
+	<string>cricket-fantasy-af152</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cricket-fantasy-af152.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1003822582399:ios:d9cd48480163e378504d4a</string>
+	<key>DATABASE_URL</key>
+	<string>https://cricket-fantasy-af152.firebaseio.com</string>
+</dict>
+</plist>

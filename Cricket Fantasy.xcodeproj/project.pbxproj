@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F1F497423FE4D3B00593EC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F497323FE4D3B00593EC8 /* AppDelegate.swift */; };
+		3F1F497623FE4D3B00593EC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F497523FE4D3B00593EC8 /* SceneDelegate.swift */; };
+		3F1F497823FE4D3B00593EC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F497723FE4D3B00593EC8 /* ViewController.swift */; };
+		3F1F497B23FE4D3B00593EC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F497923FE4D3B00593EC8 /* Main.storyboard */; };
+		3F1F497D23FE4D3C00593EC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F497C23FE4D3C00593EC8 /* Assets.xcassets */; };
+		3F1F498023FE4D3C00593EC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F497E23FE4D3C00593EC8 /* LaunchScreen.storyboard */; };
+		3F1F498823FE4DD900593EC8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F498723FE4DD900593EC8 /* SignUpViewController.swift */; };
+		3F1F498A23FE4DEB00593EC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F498923FE4DEB00593EC8 /* LoginViewController.swift */; };
+		3F1F498C23FE4DF900593EC8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F498B23FE4DF900593EC8 /* HomeViewController.swift */; };
+		3F1F498F23FE5D6700593EC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F498E23FE5D6700593EC8 /* GoogleService-Info.plist */; };
+		3F1F499323FF248900593EC8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F499223FF248900593EC8 /* Constants.swift */; };
+		3FED301F2403153E00C9B962 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FED301E2403153E00C9B962 /* background.jpg */; };
+		E159B1224EC679D8CCF250CC /* Pods_Cricket_Fantasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CF1C5F6AD036D4769B1165 /* Pods_Cricket_Fantasy.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		37CF1C5F6AD036D4769B1165 /* Pods_Cricket_Fantasy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cricket_Fantasy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1F497023FE4D3B00593EC8 /* Cricket Fantasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cricket Fantasy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1F497323FE4D3B00593EC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F1F497523FE4D3B00593EC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3F1F497723FE4D3B00593EC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F1F497A23FE4D3B00593EC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F1F497C23FE4D3C00593EC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F1F497F23FE4D3C00593EC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F1F498123FE4D3C00593EC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F1F498723FE4DD900593EC8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3F1F498923FE4DEB00593EC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3F1F498B23FE4DF900593EC8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3F1F498E23FE5D6700593EC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3F1F499223FF248900593EC8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3FED301E2403153E00C9B962 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		46D19A4806C1FC9CEAA0E408 /* Pods-Cricket Fantasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cricket Fantasy.release.xcconfig"; path = "Target Support Files/Pods-Cricket Fantasy/Pods-Cricket Fantasy.release.xcconfig"; sourceTree = "<group>"; };
+		5FD9D3492B7E5D492AB5FE6B /* Pods-Cricket Fantasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cricket Fantasy.debug.xcconfig"; path = "Target Support Files/Pods-Cricket Fantasy/Pods-Cricket Fantasy.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F1F496D23FE4D3B00593EC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E159B1224EC679D8CCF250CC /* Pods_Cricket_Fantasy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F1F496723FE4D3B00593EC8 = {
+			isa = PBXGroup;
+			children = (
+				3FED301E2403153E00C9B962 /* background.jpg */,
+				3F1F497223FE4D3B00593EC8 /* Cricket Fantasy */,
+				3F1F497123FE4D3B00593EC8 /* Products */,
+				7654BAFC5852018E2162BC89 /* Pods */,
+				B60F67012CB1923E8927ED0D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F1F497123FE4D3B00593EC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F1F497023FE4D3B00593EC8 /* Cricket Fantasy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F1F497223FE4D3B00593EC8 /* Cricket Fantasy */ = {
+			isa = PBXGroup;
+			children = (
+				3F1F498D23FE4E0000593EC8 /* View Controllers */,
+				3F1F497323FE4D3B00593EC8 /* AppDelegate.swift */,
+				3F1F497523FE4D3B00593EC8 /* SceneDelegate.swift */,
+				3F1F497923FE4D3B00593EC8 /* Main.storyboard */,
+				3F1F499223FF248900593EC8 /* Constants.swift */,
+				3F1F497C23FE4D3C00593EC8 /* Assets.xcassets */,
+				3F1F497E23FE4D3C00593EC8 /* LaunchScreen.storyboard */,
+				3F1F498123FE4D3C00593EC8 /* Info.plist */,
+				3F1F498E23FE5D6700593EC8 /* GoogleService-Info.plist */,
+			);
+			path = "Cricket Fantasy";
+			sourceTree = "<group>";
+		};
+		3F1F498D23FE4E0000593EC8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F1F497723FE4D3B00593EC8 /* ViewController.swift */,
+				3F1F498923FE4DEB00593EC8 /* LoginViewController.swift */,
+				3F1F498B23FE4DF900593EC8 /* HomeViewController.swift */,
+				3F1F498723FE4DD900593EC8 /* SignUpViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7654BAFC5852018E2162BC89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5FD9D3492B7E5D492AB5FE6B /* Pods-Cricket Fantasy.debug.xcconfig */,
+				46D19A4806C1FC9CEAA0E408 /* Pods-Cricket Fantasy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B60F67012CB1923E8927ED0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37CF1C5F6AD036D4769B1165 /* Pods_Cricket_Fantasy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F1F496F23FE4D3B00593EC8 /* Cricket Fantasy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F1F498423FE4D3C00593EC8 /* Build configuration list for PBXNativeTarget "Cricket Fantasy" */;
+			buildPhases = (
+				3792EE80A51723FECF06701A /* [CP] Check Pods Manifest.lock */,
+				3F1F496C23FE4D3B00593EC8 /* Sources */,
+				3F1F496D23FE4D3B00593EC8 /* Frameworks */,
+				3F1F496E23FE4D3B00593EC8 /* Resources */,
+				D69F1CB107F1E8AA95291D55 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cricket Fantasy";
+			productName = "Cricket Fantasy";
+			productReference = 3F1F497023FE4D3B00593EC8 /* Cricket Fantasy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F1F496823FE4D3B00593EC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = student;
+				TargetAttributes = {
+					3F1F496F23FE4D3B00593EC8 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 3F1F496B23FE4D3B00593EC8 /* Build configuration list for PBXProject "Cricket Fantasy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F1F496723FE4D3B00593EC8;
+			productRefGroup = 3F1F497123FE4D3B00593EC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F1F496F23FE4D3B00593EC8 /* Cricket Fantasy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F1F496E23FE4D3B00593EC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1F498023FE4D3C00593EC8 /* LaunchScreen.storyboard in Resources */,
+				3F1F498F23FE5D6700593EC8 /* GoogleService-Info.plist in Resources */,
+				3FED301F2403153E00C9B962 /* background.jpg in Resources */,
+				3F1F497D23FE4D3C00593EC8 /* Assets.xcassets in Resources */,
+				3F1F497B23FE4D3B00593EC8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3792EE80A51723FECF06701A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cricket Fantasy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D69F1CB107F1E8AA95291D55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cricket Fantasy/Pods-Cricket Fantasy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cricket Fantasy/Pods-Cricket Fantasy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cricket Fantasy/Pods-Cricket Fantasy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F1F496C23FE4D3B00593EC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1F497823FE4D3B00593EC8 /* ViewController.swift in Sources */,
+				3F1F497423FE4D3B00593EC8 /* AppDelegate.swift in Sources */,
+				3F1F498823FE4DD900593EC8 /* SignUpViewController.swift in Sources */,
+				3F1F498A23FE4DEB00593EC8 /* LoginViewController.swift in Sources */,
+				3F1F499323FF248900593EC8 /* Constants.swift in Sources */,
+				3F1F497623FE4D3B00593EC8 /* SceneDelegate.swift in Sources */,
+				3F1F498C23FE4DF900593EC8 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3F1F497923FE4D3B00593EC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F1F497A23FE4D3B00593EC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F1F497E23FE4D3C00593EC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F1F497F23FE4D3C00593EC8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F1F498223FE4D3C00593EC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F1F498323FE4D3C00593EC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F1F498523FE4D3C00593EC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FD9D3492B7E5D492AB5FE6B /* Pods-Cricket Fantasy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cricket Fantasy/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.nwmissouri.Cricket-Fantasy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F1F498623FE4D3C00593EC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46D19A4806C1FC9CEAA0E408 /* Pods-Cricket Fantasy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Cricket Fantasy/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.nwmissouri.Cricket-Fantasy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F1F496B23FE4D3B00593EC8 /* Build configuration list for PBXProject "Cricket Fantasy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1F498223FE4D3C00593EC8 /* Debug */,
+				3F1F498323FE4D3C00593EC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F1F498423FE4D3C00593EC8 /* Build configuration list for PBXNativeTarget "Cricket Fantasy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1F498523FE4D3C00593EC8 /* Debug */,
+				3F1F498623FE4D3C00593EC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F1F496823FE4D3B00593EC8 /* Project object */;
+}
