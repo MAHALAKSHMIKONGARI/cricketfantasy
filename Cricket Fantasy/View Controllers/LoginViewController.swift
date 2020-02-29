@@ -20,13 +20,18 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.hidesBackButton = true
+        self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "background.jpg")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
+    
+    
+
+   
     
 
     /*
@@ -49,9 +54,9 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil{
                 
-                let ac = UIAlertController(title: "not matching", message: "try again", preferredStyle: .alert)
+                let ac = UIAlertController(title: "Invalid Credentials", message: "", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .cancel)
-                ac.addAction(action)
+            ac.addAction(action)
                 self.present(ac, animated: true)
             }
             else{
@@ -64,11 +69,17 @@ class LoginViewController: UIViewController {
     
     func tansitionToHome(){
         
-       
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        let homeViewController = storyboard?.instantiateViewController(identifier: "HomeTVC") as! HomeTableViewController
         
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+    //    homeViewController.match =  Matches.shared[ind]
+        
+        navigationController?.pushViewController(homeViewController, animated: true)
+       
+//        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+//        navigationController?.pushViewController( homeViewController!, animated: true)
+//
+//       // view.window?.rootViewController = homeViewController
+//        //view.window?.makeKeyAndVisible()
     }
     
     
