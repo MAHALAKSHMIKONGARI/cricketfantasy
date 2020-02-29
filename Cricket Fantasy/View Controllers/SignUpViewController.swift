@@ -99,8 +99,8 @@ class SignUpViewController: UIViewController {
         
     }
     
-    func showError(_ message: String){
-        let ac = UIAlertController(title: "not matching", message: message, preferredStyle: .alert)
+    func showError(_ title: String){
+        let ac = UIAlertController(title: title, message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel)
         ac.addAction(action)
         self.present(ac, animated: true)
@@ -109,10 +109,11 @@ class SignUpViewController: UIViewController {
     func tansitionToHome(){
         
        
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
-        
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+          let homeViewController = storyboard?.instantiateViewController(identifier: "HomeTVC") as! HomeTableViewController
+              
+          //    homeViewController.match =  Matches.shared[ind]
+              
+              navigationController?.pushViewController(homeViewController, animated: true)
     }
     
     

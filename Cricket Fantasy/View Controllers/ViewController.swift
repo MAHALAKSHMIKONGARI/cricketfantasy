@@ -20,12 +20,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-       let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+          self.navigationController?.isNavigationBarHidden = true
+      /* let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "background.jpg")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
+        self.view.insertSubview(backgroundImage, at: 0)*/
     }
-
+    
 
 }
 
