@@ -109,14 +109,24 @@ class Players{
     }
     
     
+    private init(){
+        resetPlayers()
+    }
+    
     func fetchPlayers(matchID : Int){
-        let url  = URL(string: "https://cricapi.com/api/fantasySquad?apikey=Jfyu91sxtCMeQvnsXPkDrCqpS6x1&unique_id=\(matchID)")
+        
+      //  DispatchQueue.main.async {
+    
+        if let url  = URL(string:   "https://cricapi.com/api/fantasySquad?apikey=Jfyu91sxtCMeQvnsXPkDrCqpS6x1&unique_id=\(matchID)"){
          
-        URLSession.shared.dataTask(with: url!){(data, response, error) in
+        //URLSession.shared.dataTask(with: url){(data, response, error) in
             
-            if error == nil{
+           
                 do{
-                    let playerSquad = try JSONDecoder().decode(PlayerSquad.self, from: data!)
+                    let contents = try String(contentsOf: url)
+                    print(contents)
+                    let data = try Data(contentsOf : url)
+                    let playerSquad = try JSONDecoder().decode(PlayerSquad.self, from: data)
                     
                     self.players = playerSquad.squad[0].players
                     for i in 0..<playerSquad.squad[1].players.count{
@@ -124,23 +134,24 @@ class Players{
                     }
                 
                     for i in 0..<self.players.count{
-                        self.playerstats(playerId : self.players[i].pid, index: i, completed: {
-                         //  self.tableView.reloadData()
-                           // self.reloaddata(index : i, count : self.players.count)
-                             NotificationCenter.default.post(name: NSNotification.Name("player added"), object: nil)
-                        })
+                        self.playerstats(playerId : self.players[i].pid, index: i)
+                         
                     }
+                    
+                    
                    
                 }catch{
                     print("JSON Error")
                 }
             }
-        }.resume()
+       
+       // }
     }
     
     
-    func playerstats(playerId : Int, index : Int, completed: @escaping ()->()){
-        
+    
+    func playerstats(playerId : Int, index : Int){
+       //  DispatchQueue.main.async {
         let url  = URL(string: "https://cricapi.com/api/playerStats?apikey=Jfyu91sxtCMeQvnsXPkDrCqpS6x1&pid=\(playerId)")
          
         URLSession.shared.dataTask(with: url!){(data, response, error) in
@@ -149,6 +160,7 @@ class Players{
                 do{
                     let playerstats = try JSONDecoder().decode(PlayerStatistics.self, from: data!)
                     
+                    print(playerstats)
                   if playerstats.playingRole.contains("Bowler"){
                         self.bowler.append(self.players[index].name)
                    
@@ -163,10 +175,10 @@ class Players{
                     else if playerstats.playingRole.contains("Allrounder"){
                         self.allRounder.append(self.players[index].name)
                     }
-                 
-                    DispatchQueue.main.async {
-                                                     completed()
-                    }
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("player added"), object: nil)
+                    
+                   
                     
                 }catch{
                     print("JSON Error")
@@ -177,6 +189,7 @@ class Players{
             }
           
         }.resume()
+      //  }
       
     }
 

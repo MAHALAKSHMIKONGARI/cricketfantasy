@@ -52,28 +52,26 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         
-        print("entered players")
-        
         super.viewDidLoad()
-        
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(playerAdded(notification:)), name: NSNotification.Name(rawValue:"player added"), object: nil)
+
+        playersref = Database.database().reference()
+        let user_ID = Auth.auth().currentUser!.uid
+               
+               DatabaseStorage.shared.FectchMatchData(ref:playersref, userid: user_ID)
+               DatabaseStorage.shared.NumberofMatchesInDatabase(ref:playersref, userid: user_ID, matchID: matchId  ){ success in
+                   if success{
+                   }
+                       
+                   else{
+                       print("out")
+                   }
+               }
         
         Players.shared.resetPlayers()
         Players.shared.fetchPlayers(matchID : matchId)
         
-        
-        playersref = Database.database().reference()
-        let user_ID = Auth.auth().currentUser!.uid
-        
-        DatabaseStorage.shared.NumberofMatchesInDatabase(ref:playersref, userid: user_ID, matchID: matchId  ){ success in
-            if success{
-            }
                 
-            else{
-                print("out")
-            }
-        }
+       
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -88,17 +86,16 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
         country1IV.image = country1Img
         country2IV.image = country2Img
         
-        // Do any additional setup after loading the view.
-        print( SelectPlayersViewController.postObj)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerAdded(notification:)), name: NSNotification.Name(rawValue:"player added"), object: nil)
     }
     
     @objc func playerAdded(notification:Notification){
         
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+               
     }
-    
-    
-    
     
     @objc func Next(){
         
@@ -117,33 +114,21 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                         "batsman" : DatabaseStorage.shared.getSelectedBatsmans(),
                         "allrounder" : DatabaseStorage.shared.getSelectedAllRounders(),
                         "wiketkeeper" : DatabaseStorage.shared.getSelectedWicketKeepers()  ]]as [String :Any]
-        print(SelectPlayersViewController.postObj)
+       
         for i in 0..<SelectPlayersViewController.matchnum{
-            print("updated")
-            print(i)
-            print(SelectPlayersViewController.matchnum)
-            print(SelectPlayersViewController.storedmatches[i])
-            print(matchId)
             if SelectPlayersViewController.storedmatches[i] == self.matchId {
                 print(SelectPlayersViewController.storedmatches[i] )
-                print("inside")
-                
-                
                 SelectPlayersViewController.postObj["match\(i)"] = mat
                 updated = true
-                print(updated)
             }
             
         }
         
         if updated == false{
-            print(updated)
             SelectPlayersViewController.postObj["match\(SelectPlayersViewController.matchnum)"] = mat
-            
             SelectPlayersViewController.matchnum  = SelectPlayersViewController.matchnum  + 1
         }
         
-        print(SelectPlayersViewController.postObj)
         self.playersref?.child("users/\(userID!)/Matches").setValue( SelectPlayersViewController.postObj, withCompletionBlock: {error, ref in
             if error == nil {
                 
@@ -153,12 +138,10 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
             }
         })
         
-        
-        
-        
-        playersref?.child("users/UOLoBAo4CzabJG2hcLtpFatw8103/lastname").setValue("pathuri")
-        
+
         let next = storyboard?.instantiateViewController(identifier: "TVC") as! TeamViewController
+        next.leagueref = playersref
+        
         navigationController?.pushViewController(next, animated: true)
         
     }
@@ -294,6 +277,8 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                     DatabaseStorage.shared.addSelectedBowler(bowlerName: Players.shared.getBowlers()[indexpath.row])
                     DatabaseStorage.shared.incrementBowlerCount()
                     sender.isSelected = true
+                }else{
+                    showError("You can't have more than 4 BOWLERS")
                 }
             }
             
@@ -304,6 +289,9 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                     sender.isSelected = true
                     
                 }
+                else{
+                    showError("You can't have more than 4 BATSMAN")
+                }
             }
             if iswkeeper && DatabaseStorage.shared.getWicketKeeperCount() <= 0{
                 if let indexpath = tableView.indexPathForRow(at: point){
@@ -311,6 +299,8 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                     DatabaseStorage.shared.incrementWKeeperCount()
                     sender.isSelected = true
                     
+                }else{
+                    showError("You can't have more than 1 WICKET KEEPERS")
                 }
             }
             if isallrounder  && DatabaseStorage.shared.getAllRounderCount() <= 1 {
@@ -320,6 +310,8 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                     
                     sender.isSelected = true
                     
+                }else{
+                    showError("You can't have more than 2 ALL ROUNDERS")
                 }
             }
             
@@ -366,7 +358,12 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     
-    
+    func showError(_ title: String){
+           let ac = UIAlertController(title: title, message: "", preferredStyle: .alert)
+           let action = UIAlertAction(title: "OK", style: .cancel)
+           ac.addAction(action)
+           self.present(ac, animated: true)
+       }
     
     /*
      // MARK: - Navigation

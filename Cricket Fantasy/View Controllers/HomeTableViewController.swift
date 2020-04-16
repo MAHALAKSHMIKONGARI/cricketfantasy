@@ -10,21 +10,25 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     
+    @IBOutlet weak var cellView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         navigationItem.title = "Matches"
-       Tournaments.shared.fetchMatch(){
-        self.tableView.reloadData()
-        }
-      /*  NotificationCenter.default.addObserver(self, selector: #selector(matchAdded(notification:)), name: NSNotification.Name(rawValue:"Match added"), object: nil)*/
+       //Tournaments.shared.fetchMatch()
+        
+       NotificationCenter.default.addObserver(self, selector: #selector(matchAdded(notification:)), name: NSNotification.Name(rawValue:"Match added"), object: nil)
     }
     
-  /*  @objc func matchAdded(notification:Notification){
+   @objc func matchAdded(notification:Notification){
         
-        self.tableView.reloadData()
-    }*/
+        DispatchQueue.main.async {
+             self.tableView.reloadData()
+                        
+        }
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

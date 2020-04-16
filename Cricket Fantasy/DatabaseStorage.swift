@@ -36,6 +36,20 @@ class DatabaseStorage{
     
     
     
+    func FectchMatchData(ref: DatabaseReference?, userid: String){
+        
+        ref?.child("users/\(userid)/Matches").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let count = value?.count ?? 0
+                   
+            for i in 0..<count{
+                let match =  value?["match\(i)"] as? [String : Any] ?? [:]
+                SelectPlayersViewController.postObj["match\(i)"] = match
+            }
+                  
+         })
+    }
+    
     func NumberofMatchesInDatabase (ref: DatabaseReference?, userid: String, matchID: Int, completion: (Bool) -> ()){
         var matched = false
         ref?.child("users/\(userid)/Matches").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -49,14 +63,10 @@ class DatabaseStorage{
                     let value = snapshot.value as? NSDictionary
                     // self.matchnum = value!.count
                     let id =  value?["matchID"] as? Int ?? 0
-                print(SelectPlayersViewController.storedmatches)
-               if !SelectPlayersViewController.storedmatches.contains(id){
-                   SelectPlayersViewController.storedmatches.append(id)
-                }
-                 print(SelectPlayersViewController.storedmatches)
-                    print(id)
-                    print(matchID)
-                 print( SelectPlayersViewController.postObj)
+                    if !SelectPlayersViewController.storedmatches.contains(id){
+                        SelectPlayersViewController.storedmatches.append(id)
+                    }
+
                     if id == matchID{
                         ref?.child("users/\(userid)/Matches/match\(i)/players").observeSingleEvent(of: .value, with: { (snapshot) in
                             
@@ -85,7 +95,6 @@ class DatabaseStorage{
                         
                        
                     }
-                    print( SelectPlayersViewController.postObj)
                     
                 }) { (error) in
                     print(error.localizedDescription)
@@ -97,13 +106,12 @@ class DatabaseStorage{
         }
         
         if matched ==  false{
-                   print("matcged")
                    allroundercount = 0
                    wicketkeepercount = 0
                    batsmancount = 0
                    bowlercount = 0
                    
-                  print( selectedbowlers.removeAll())
+                   selectedbowlers.removeAll()
                    selectedbatsman.removeAll()
                    selectedWkeeper.removeAll()
                    selectedallRounder.removeAll()

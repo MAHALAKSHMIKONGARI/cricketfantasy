@@ -24,9 +24,12 @@
 		3F1F498A23FE4DEB00593EC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F498923FE4DEB00593EC8 /* LoginViewController.swift */; };
 		3F1F498F23FE5D6700593EC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F498E23FE5D6700593EC8 /* GoogleService-Info.plist */; };
 		3F1F499323FF248900593EC8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F499223FF248900593EC8 /* Constants.swift */; };
+		3F2E38112442B6400029D10D /* LeaguePlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E38102442B6400029D10D /* LeaguePlayersTableViewController.swift */; };
+		3F2E38132442B6680029D10D /* league.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E38122442B6680029D10D /* league.swift */; };
 		3F34370C242D8503009FCF67 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F34370B242D8503009FCF67 /* Players.swift */; };
 		3F34370E242FD355009FCF67 /* DatabaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F34370D242FD355009FCF67 /* DatabaseStorage.swift */; };
 		3F420A632405A1CA003166C1 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F420A622405A1CA003166C1 /* HomeTableViewController.swift */; };
+		3F59445224458543003A29D0 /* MyLeagueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F59445124458543003A29D0 /* MyLeagueTableViewController.swift */; };
 		3FB11E2824108E1900FE41DD /* UpComingMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB11E2724108E1900FE41DD /* UpComingMatches.swift */; };
 		3FED301F2403153E00C9B962 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FED301E2403153E00C9B962 /* background.jpg */; };
 		E159B1224EC679D8CCF250CC /* Pods_Cricket_Fantasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CF1C5F6AD036D4769B1165 /* Pods_Cricket_Fantasy.framework */; };
@@ -53,9 +56,12 @@
 		3F1F498923FE4DEB00593EC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F1F498E23FE5D6700593EC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F1F499223FF248900593EC8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F2E38102442B6400029D10D /* LeaguePlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguePlayersTableViewController.swift; sourceTree = "<group>"; };
+		3F2E38122442B6680029D10D /* league.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = league.swift; sourceTree = "<group>"; };
 		3F34370B242D8503009FCF67 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		3F34370D242FD355009FCF67 /* DatabaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseStorage.swift; sourceTree = "<group>"; };
 		3F420A622405A1CA003166C1 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		3F59445124458543003A29D0 /* MyLeagueTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLeagueTableViewController.swift; sourceTree = "<group>"; };
 		3FB11E2724108E1900FE41DD /* UpComingMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingMatches.swift; sourceTree = "<group>"; };
 		3FED301E2403153E00C9B962 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		46D19A4806C1FC9CEAA0E408 /* Pods-Cricket Fantasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cricket Fantasy.release.xcconfig"; path = "Target Support Files/Pods-Cricket Fantasy/Pods-Cricket Fantasy.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 			children = (
 				3F1F498D23FE4E0000593EC8 /* View Controllers */,
 				3F1F497323FE4D3B00593EC8 /* AppDelegate.swift */,
+				3F2E38122442B6680029D10D /* league.swift */,
 				3FB11E2724108E1900FE41DD /* UpComingMatches.swift */,
 				3F34370D242FD355009FCF67 /* DatabaseStorage.swift */,
 				3F34370B242D8503009FCF67 /* Players.swift */,
@@ -126,6 +133,8 @@
 				3F420A622405A1CA003166C1 /* HomeTableViewController.swift */,
 				3F1F498723FE4DD900593EC8 /* SignUpViewController.swift */,
 				3F0BDA6624219DF600E803C0 /* TeamViewController.swift */,
+				3F2E38102442B6400029D10D /* LeaguePlayersTableViewController.swift */,
+				3F59445124458543003A29D0 /* MyLeagueTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -270,12 +279,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1F497823FE4D3B00593EC8 /* ViewController.swift in Sources */,
+				3F2E38112442B6400029D10D /* LeaguePlayersTableViewController.swift in Sources */,
 				3F1F497423FE4D3B00593EC8 /* AppDelegate.swift in Sources */,
 				3F0BDA6724219DF600E803C0 /* TeamViewController.swift in Sources */,
+				3F59445224458543003A29D0 /* MyLeagueTableViewController.swift in Sources */,
 				3F1F498823FE4DD900593EC8 /* SignUpViewController.swift in Sources */,
 				3FB11E2824108E1900FE41DD /* UpComingMatches.swift in Sources */,
 				3F19FD9E24060E65000FE58B /* SelectPlayersViewController.swift in Sources */,
 				3F1F498A23FE4DEB00593EC8 /* LoginViewController.swift in Sources */,
+				3F2E38132442B6680029D10D /* league.swift in Sources */,
 				3F34370C242D8503009FCF67 /* Players.swift in Sources */,
 				3F1F499323FF248900593EC8 /* Constants.swift in Sources */,
 				3F420A632405A1CA003166C1 /* HomeTableViewController.swift in Sources */,

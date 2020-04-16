@@ -30,8 +30,8 @@
             filePath = "Cricket Fantasy/View Controllers/SelectPlayersViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "Cricket Fantasy/View Controllers/SelectPlayersViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Cricket Fantasy/View Controllers/SelectPlayersViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "Next()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,10 +78,10 @@
             filePath = "Cricket Fantasy/View Controllers/HomeTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "HomeTableViewController"
-            landmarkType = "3">
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -96,7 +96,407 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
-            landmarkName = "fetchMatch(completed:)"
+            landmarkName = "fetchMatch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A50053FE-04D7-426A-8FA5-6F68077080F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/SelectPlayersViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "Next()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27D863C7-70C4-4D4C-B628-A34D6A00BF3B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "joinTeamToPlay(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "27D863C7-70C4-4D4C-B628-A34D6A00BF3B - 1519196fdac27776"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in Cricket_Fantasy.TeamViewController.joinTeamToPlay(Any) -&gt; ()"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "1343">
+               </Location>
+               <Location
+                  uuid = "27D863C7-70C4-4D4C-B628-A34D6A00BF3B - 65ba040b7d3de822"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in closure #1 (__C.UIAlertAction) -&gt; () in Cricket_Fantasy.TeamViewController.joinTeamToPlay(Any) -&gt; ()"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "44C8E090-D575-46A3-AA06-2674850D1BE8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "joinTeamToPlay(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1BECA8EE-EDBF-4C9F-882D-40656E8CCCC7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1BECA8EE-EDBF-4C9F-882D-40656E8CCCC7 - 2edf883c396e75b0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cricket_Fantasy.TeamViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "177">
+               </Location>
+               <Location
+                  uuid = "1BECA8EE-EDBF-4C9F-882D-40656E8CCCC7 - 30103efd4615a113"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Cricket_Fantasy.TeamViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9AF9E71C-7D59-45B5-A84C-61C889A6D8F8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "joinTeamToPlay(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D8216D1-0557-4912-B010-B0E0463F7741"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "joinTeamToPlay(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD1AB50C-AA84-41E3-851C-AE713D8C5F60"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
+            landmarkName = "checkLeagueIsContain(teamID:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD1AB50C-AA84-41E3-851C-AE713D8C5F60 - b1085192bcbe775d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Cricket_Fantasy.TeamViewController.checkLeagueIsContain(teamID: Swift.UInt32) -&gt; Swift.Bool"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
+                  offsetFromSymbolStart = "1416">
+               </Location>
+               <Location
+                  uuid = "CD1AB50C-AA84-41E3-851C-AE713D8C5F60 - 862492be88cd8600"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in closure #1 (__C.FIRDataSnapshot) -&gt; () in Cricket_Fantasy.TeamViewController.checkLeagueIsContain(teamID: Swift.UInt32) -&gt; Swift.Bool"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "301"
+                  endingLineNumber = "301"
+                  offsetFromSymbolStart = "318">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68781B57-6C5A-4A2C-AF0D-B9E6B98F9B4C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "joinTeamToPlay(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F23F911E-412A-4E66-BB94-C5198F0CB899"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "createTeamToPlay(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F23F911E-412A-4E66-BB94-C5198F0CB899 - a3d95b832d4a1a78"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cricket_Fantasy.TeamViewController.createTeamToPlay(Any) -&gt; ()"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "F23F911E-412A-4E66-BB94-C5198F0CB899 - a3d95b832d4a1a78"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cricket_Fantasy.TeamViewController.createTeamToPlay(Any) -&gt; ()"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "778">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6C15A01-C9BF-4BC4-B4A7-8FDC341A5541"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/MyLeagueTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5148CE6-3ACA-4F10-B55C-6346EE53045D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/MyLeagueTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E27F117-D6BE-432E-BFD5-549FD801F0A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/MyLeagueTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89B0E082-0402-4B91-B99C-09699288C740"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/MyLeagueTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6217D9DF-678C-470F-BC4D-BDCED09BBF2C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
+            landmarkName = "showInputDialog(teamID:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6217D9DF-678C-470F-BC4D-BDCED09BBF2C - ca718d53570a66dd"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cricket_Fantasy.TeamViewController.showInputDialog(teamID: Swift.UInt32) -&gt; ()"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "494">
+               </Location>
+               <Location
+                  uuid = "6217D9DF-678C-470F-BC4D-BDCED09BBF2C - ed45cb386cb5d83f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in Cricket_Fantasy.TeamViewController.showInputDialog(teamID: Swift.UInt32) -&gt; ()"
+                  moduleName = "Cricket Fantasy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/student/Documents/GitHub/GitHub-Ios%20Final%20Project/cricketfantasy/Cricket%20Fantasy/View%20Controllers/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F12D1309-5E1C-4950-B008-443EDC2A41B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cricket Fantasy/View Controllers/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
+            landmarkName = "getYourLeagues()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

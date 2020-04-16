@@ -61,7 +61,7 @@ class Tournaments{
         return comingmatches.count
     }
     
-    func fetchMatch(completed: @escaping ()->()){
+    func fetchMatch(){
         let url  = URL(string: "https://cricapi.com/api/matches?apikey=Jfyu91sxtCMeQvnsXPkDrCqpS6x1")
         
         URLSession.shared.dataTask(with: url!){(data, response, error) in
@@ -71,17 +71,12 @@ class Tournaments{
                     
                     let match = try JSONDecoder().decode(ComingMatch.self, from: data!)
                     for i in 0..<match.matches.count{
-                        // if match.matches[i].type == "Twenty20" && match.matches[i].type == "ODI" {
+                        if match.matches[i].type == "Twenty20" {
                         
-                        self.comingmatches.append(match.matches[i])
-                        // }
+                             self.comingmatches.append(match.matches[i])
+                        }
                     }
-                    DispatchQueue.main.async {
-                                           completed()
-                                           
-                       }
-                   // NotificationCenter.default.post(name: NSNotification.Name("Match added"), object: nil)
-                    
+                     NotificationCenter.default.post(name: NSNotification.Name("Match added"), object: nil  )
                 }catch{
                     print("JSON Error")
                 }
@@ -93,6 +88,6 @@ class Tournaments{
     }
     
     private init(){
-      //  fetchMatch()
+       fetchMatch()
     }
 }
