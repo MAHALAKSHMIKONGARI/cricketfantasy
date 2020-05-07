@@ -16,34 +16,34 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var Choose: UISegmentedControl!
     
+    //Database reference
     var playersref :DatabaseReference?
     
-  //  var match : Match!
-    var squad = [Squads]()
-   // var players = [Player]()
-    
-    var newView = false
+    // Used for Segmented Control selection
     var isbowler : Bool = true
     var isbatsman : Bool = false
     var iswkeeper: Bool = false
     var isallrounder: Bool = false
     
+    // Number of matches that user is playing stored in database.
     static var matchnum = 0
+    
+    // store the matches to corresponding players
     static var postObj : [String: Any] = [:]
-    var id  = 0
+    
+    // matchId
     var matchId  = 0
-    var matched = false
-    var getmatchnum = false
+    
     @IBOutlet weak var country1IV: UIImageView!
     @IBOutlet weak var country2IV: UIImageView!
     @IBOutlet weak var country1LBL: UILabel!
     @IBOutlet weak var country2LBL: UILabel!
+    
     @IBOutlet weak var tableView:UITableView!
     
     var country1 = ""
     var country2 = ""
-    var country1Img = UIImage()
-    var country2Img = UIImage()
+    
     
     var nameLBLTag = 10
     var creditLBLTag = 20
@@ -53,97 +53,106 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
         playersref = Database.database().reference()
         let user_ID = Auth.auth().currentUser!.uid
-               
-               DatabaseStorage.shared.FectchMatchData(ref:playersref, userid: user_ID)
-               DatabaseStorage.shared.NumberofMatchesInDatabase(ref:playersref, userid: user_ID, matchID: matchId  ){ success in
-                   if success{
-                   }
-                       
-                   else{
-                       print("out")
-                   }
-               }
         
+        // Fetch matches stored in database for corresponding user
+        DatabaseStorage.shared.FectchMatchData(ref:playersref, userid: user_ID)
+        
+        //Check whether players are already selected for this match or not.
+        DatabaseStorage.shared.NumberofMatchesInDatabase(ref:playersref, userid: user_ID, matchID: matchId)
+        
+        //Reset all players
         Players.shared.resetPlayers()
         Players.shared.fetchPlayers(matchID : matchId)
         
-                
-       
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background.jpg")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(Next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "CreateTeam", style: .done, target: self, action: #selector(CreateTeam))
+        
         
         country1LBL.text = country1
         country2LBL.text = country2
-        country1IV.image = country1Img
-        country2IV.image = country2Img
+        country1IV.image = UIImage(named: "\(country1).jpeg")
+        country2IV.image = UIImage(named: "\(country2).jpeg")
         
+        
+        //Notification whether player is added or not.
         NotificationCenter.default.addObserver(self, selector: #selector(playerAdded(notification:)), name: NSNotification.Name(rawValue:"player added"), object: nil)
     }
     
+    
+    //Reload the table view once notification is received
     @objc func playerAdded(notification:Notification){
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-               
+        
     }
     
-    @objc func Next(){
+    
+    @objc func CreateTeam(){
         
-        var updated = false
-        
-        let userID = Auth.auth().currentUser?.uid
-        
-        let mat = [
-            // "Matches" :[
-            "matchID":  self.matchId,
-            "players" :["bowlerscount" : DatabaseStorage.shared.getBowlerCount(),
-                        "batsmancount" : DatabaseStorage.shared.getBatsmanCount(),
-                        "WKcount" : DatabaseStorage.shared.getWicketKeeperCount(),
-                        "ALLRoundercount" : DatabaseStorage.shared.getAllRounderCount(),
-                        "bowler" : DatabaseStorage.shared.getSelectedBowlers(),
-                        "batsman" : DatabaseStorage.shared.getSelectedBatsmans(),
-                        "allrounder" : DatabaseStorage.shared.getSelectedAllRounders(),
-                        "wiketkeeper" : DatabaseStorage.shared.getSelectedWicketKeepers()  ]]as [String :Any]
-       
-        for i in 0..<SelectPlayersViewController.matchnum{
-            if SelectPlayersViewController.storedmatches[i] == self.matchId {
-                print(SelectPlayersViewController.storedmatches[i] )
-                SelectPlayersViewController.postObj["match\(i)"] = mat
-                updated = true
+        // Don't go to the Team View till players are selected
+        if DatabaseStorage.shared.getBowlerCount() <= 3{
+            showError("4 Bowlers required")
+        }
+        else if DatabaseStorage.shared.getBatsmanCount() <= 3{
+            showError("4 Batsmans required")
+        }
+        else if DatabaseStorage.shared.getAllRounderCount() <= 1{
+            showError("2 All rounders required")
+        }
+        else if DatabaseStorage.shared.getWicketKeeperCount() == 0{
+            showError("1 WicketKeeper required")
+        }
+            
+        else{
+            
+            var updated = false
+            let userID = Auth.auth().currentUser?.uid
+            
+            //Strore selected team in Databsae
+            let mat = [
+                "matchID":  self.matchId,
+                "players" :["bowlerscount" : DatabaseStorage.shared.getBowlerCount(),
+                            "batsmancount" : DatabaseStorage.shared.getBatsmanCount(),
+                            "WKcount" : DatabaseStorage.shared.getWicketKeeperCount(),
+                            "ALLRoundercount" : DatabaseStorage.shared.getAllRounderCount(),
+                            "bowler" : DatabaseStorage.shared.getSelectedBowlers(),
+                            "batsman" : DatabaseStorage.shared.getSelectedBatsmans(),
+                            "allrounder" : DatabaseStorage.shared.getSelectedAllRounders(),
+                            "wiketkeeper" : DatabaseStorage.shared.getSelectedWicketKeepers()  ]]as [String :Any]
+            
+            // If the match is already in database and updating the changes
+            for i in 0..<SelectPlayersViewController.matchnum{
+                if SelectPlayersViewController.storedmatches[i] == self.matchId {
+                    SelectPlayersViewController.postObj["match\(i)"] = mat
+                    updated = true
+                }
+                
             }
             
-        }
-        
-        if updated == false{
-            SelectPlayersViewController.postObj["match\(SelectPlayersViewController.matchnum)"] = mat
-            SelectPlayersViewController.matchnum  = SelectPlayersViewController.matchnum  + 1
-        }
-        
-        self.playersref?.child("users/\(userID!)/Matches").setValue( SelectPlayersViewController.postObj, withCompletionBlock: {error, ref in
-            if error == nil {
-                
-                self.dismiss(animated: true, completion: nil)
-            }else{
-                
+            // If the match is newly storing in database
+            if updated == false{
+                SelectPlayersViewController.postObj["match\(SelectPlayersViewController.matchnum)"] = mat
+                SelectPlayersViewController.matchnum  = SelectPlayersViewController.matchnum  + 1
             }
-        })
-        
-
-        let next = storyboard?.instantiateViewController(identifier: "TVC") as! TeamViewController
-        next.leagueref = playersref
-        
-        navigationController?.pushViewController(next, animated: true)
-        
+            
+            // Database storage
+            self.playersref?.child("users/\(userID!)/Matches").setValue( SelectPlayersViewController.postObj, withCompletionBlock: {error, ref in
+                if error == nil {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+            
+            // Navigationg to team view controller
+            let next = storyboard?.instantiateViewController(identifier: "TVC") as! TeamViewController
+            next.leagueref = playersref
+            navigationController?.pushViewController(next, animated: true)
+        }
     }
     
     let optimalRowHeight:CGFloat = 60
@@ -154,6 +163,7 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        //Based on sigamented Tap count will change
         if isallrounder == true{
             return Players.shared.getNumallRounders()
         }
@@ -176,9 +186,9 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
         var player = ""
         
         let nameLBL = cell.viewWithTag(nameLBLTag) as! UILabel
-        let creditLBL  = cell.viewWithTag(creditLBLTag) as! UILabel
         let selectButton = cell.viewWithTag(300) as! UIButton
         
+        //If Batsmans are selected it shows as selected. otherwise it shows as not selected
         if isbatsman == true{
             player = Players.shared.getBatsmans()[indexPath.row]
             if DatabaseStorage.shared.getSelectedBatsmans().contains(player){
@@ -188,6 +198,8 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
             }
             
         }
+            
+            //If All Rounder are selected it shows as selected. otherwise it shows as not selected
         else if isallrounder == true{
             player = Players.shared.getAllRounders()[indexPath.row]
             if DatabaseStorage.shared.getSelectedAllRounders().contains(player){
@@ -197,6 +209,8 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
             }
             
         }
+            
+            //If Wicket keeper selected it shows as selected. otherwise it shows as not selected
         else if iswkeeper == true{
             player = Players.shared.getWicketKeepers()[indexPath.row]
             if DatabaseStorage.shared.getSelectedWicketKeepers().contains(player){
@@ -205,6 +219,8 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                 selectButton.isSelected = false
             }
         }
+            
+            //If Bowlers are selected it shows as selected. otherwise it shows as not selected
         else{
             player = Players.shared.getBowlers()[indexPath.row]
             if DatabaseStorage.shared.getSelectedBowlers().contains(player){
@@ -213,11 +229,9 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                 selectButton.isSelected = false
             }
         }
-        // selectButton.isSelected = false
-        
         
         nameLBL.text = player
-        // creditLBL.text = "\(Player.)"
+        
         
         return cell
         
@@ -225,11 +239,10 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
     
     
     
-    
+    // Add or remove the players based on the button tap
     @IBAction func addPlayer(_ sender: UIButton) {
-        print("bowlers")
-        print(SelectPlayersViewController.postObj)
-        print(DatabaseStorage.shared.getSelectedBowlers())
+        
+        
         if sender.isSelected{
             
             let point = sender.convert(CGPoint.zero, to: tableView)
@@ -277,8 +290,6 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                     DatabaseStorage.shared.addSelectedBowler(bowlerName: Players.shared.getBowlers()[indexpath.row])
                     DatabaseStorage.shared.incrementBowlerCount()
                     sender.isSelected = true
-                }else{
-                    showError("You can't have more than 4 BOWLERS")
                 }
             }
             
@@ -289,9 +300,6 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                     sender.isSelected = true
                     
                 }
-                else{
-                    showError("You can't have more than 4 BATSMAN")
-                }
             }
             if iswkeeper && DatabaseStorage.shared.getWicketKeeperCount() <= 0{
                 if let indexpath = tableView.indexPathForRow(at: point){
@@ -299,8 +307,6 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                     DatabaseStorage.shared.incrementWKeeperCount()
                     sender.isSelected = true
                     
-                }else{
-                    showError("You can't have more than 1 WICKET KEEPERS")
                 }
             }
             if isallrounder  && DatabaseStorage.shared.getAllRounderCount() <= 1 {
@@ -310,8 +316,6 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
                     
                     sender.isSelected = true
                     
-                }else{
-                    showError("You can't have more than 2 ALL ROUNDERS")
                 }
             }
             
@@ -320,8 +324,8 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
+    //Based on Segament Tap will get to know which table is highligthed
     @IBAction func SegmentTapped(_ sender: Any) {
-        
         
         let getIndex = Choose.selectedSegmentIndex
         
@@ -354,16 +358,15 @@ class SelectPlayersViewController: UIViewController, UITableViewDataSource, UITa
             break
         }
         
-        
     }
     
-    
+    //Alert Message
     func showError(_ title: String){
-           let ac = UIAlertController(title: title, message: "", preferredStyle: .alert)
-           let action = UIAlertAction(title: "OK", style: .cancel)
-           ac.addAction(action)
-           self.present(ac, animated: true)
-       }
+        let ac = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel)
+        ac.addAction(action)
+        self.present(ac, animated: true)
+    }
     
     /*
      // MARK: - Navigation

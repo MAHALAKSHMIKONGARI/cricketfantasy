@@ -9,28 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
-    @IBOutlet weak var loginButton: UIButton!
-
-    @IBOutlet weak var signUpButton: UIButton!
+    
+    @IBOutlet weak var loginBTN: UIButton!
+    
+    @IBOutlet weak var signUpBTN: UIButton!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
-        
-          self.navigationController?.isNavigationBarHidden = true
-      /* let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background.jpg")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)*/
-        
-        
+        view.backgroundColor = UIColor.white
+        self.navigationController?.isNavigationBarHidden = true
+
     }
     
     
     
-
+    
 }
 

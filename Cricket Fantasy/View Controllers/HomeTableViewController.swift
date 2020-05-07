@@ -10,25 +10,39 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     
-    @IBOutlet weak var cellView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
+        
         navigationItem.hidesBackButton = true
         navigationItem.title = "Matches"
-       //Tournaments.shared.fetchMatch()
         
-       NotificationCenter.default.addObserver(self, selector: #selector(matchAdded(notification:)), name: NSNotification.Name(rawValue:"Match added"), object: nil)
+        // Notification Whether Match added or not
+        NotificationCenter.default.addObserver(self, selector: #selector(matchAdded(notification:)), name: NSNotification.Name(rawValue:"Match added"), object: nil)
+        
+        // Left Bar menu button
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .done, target: self, action: #selector(Menu))
     }
     
-   @objc func matchAdded(notification:Notification){
+    // Left Bar menu button navigating to Menu Bar controller.
+    @objc func Menu(){
+        let menu = storyboard?.instantiateViewController(identifier: "SideMenu") as! SideMenuViewController
+        //  navigationController?.pushViewController(menu, animated: true)
+        menu.modalPresentationStyle = .formSheet
+        self.show(menu, sender: nil)
+    }
+    
+    // Reload the tabel View once notification is received
+    @objc func matchAdded(notification:Notification){
         
         DispatchQueue.main.async {
-             self.tableView.reloadData()
-                        
+            self.tableView.reloadData()
+            
         }
         
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -47,6 +61,7 @@ class HomeTableViewController: UITableViewController {
         return Tournaments.shared.numMatches()
     }
     
+    // Tags for country names and logos
     let country1IMGTag = 100
     let country2IMGTag = 200
     let country1LBLTag = 300
@@ -54,27 +69,30 @@ class HomeTableViewController: UITableViewController {
     
     let optimalRowHeight:CGFloat = 150
     
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return optimalRowHeight
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
+        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.masksToBounds = true
         
+        // Get Tournaments
         let match = Tournaments.shared[indexPath.row]!
-        
-        
         let country1LBL = cell.viewWithTag(country1LBLTag) as! UILabel
         let country2LBL = cell.viewWithTag(country2LBLTag) as! UILabel
         let country1IMG = cell.viewWithTag(country1IMGTag) as! UIImageView
         let country2IMG = cell.viewWithTag(country2IMGTag) as! UIImageView
         
-        
+        // Assign the country names to labels
         country1LBL.text = match.team1
         country2LBL.text = match.team2
         
-        
+        //Assign country images
         if let image = UIImage(named: "\(match.team1).jpeg"){
             country1IMG.image = image
         }
@@ -97,16 +115,13 @@ class HomeTableViewController: UITableViewController {
         
         let match = Tournaments.shared[indexPath.row]!
         
+        //Navigating to Players view
         let playersVC = storyboard?.instantiateViewController(identifier: "playersVC") as! SelectPlayersViewController
         
-        
-        playersVC.country1 =  match.team1
+        playersVC.country1 = match.team1
         playersVC.country2 = match.team2
-        // playersVC.country1Img = UIImage(named: "\(match.team1).jpeg")!
-        // playersVC.country2Img = UIImage(named: "\(match.team2).jpeg")!
-        
         playersVC.matchId = match.unique_id
-      //  playersVC.match = Matches.shared[indexPath.row]
+        
         navigationController?.pushViewController(playersVC, animated: true)
         
     }

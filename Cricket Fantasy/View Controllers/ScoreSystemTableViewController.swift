@@ -1,24 +1,20 @@
 //
-//  MyLeagueTableViewController.swift
+//  ScoreSystemTableViewController.swift
 //  Cricket Fantasy
 //
-//  Created by student on 4/14/20.
+//  Created by student on 5/6/20.
 //  Copyright © 2020 student. All rights reserved.
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
 
-class MyLeagueTableViewController: UITableViewController {
-    
-    var leagueref :DatabaseReference?
-    var leagues : [String: Any] = [:]
+class ScoreSystemTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "My leagues"
+        navigationItem.title = "Scoring System"
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -28,6 +24,9 @@ class MyLeagueTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    let scoreItemTag = 100
+    let scorePointTag = 200
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -35,65 +34,31 @@ class MyLeagueTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return leagues.count
+        print(ScorePoints.shared.NumScoreItems())
+        return ScorePoints.shared.NumScoreItems()
+        
+        
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        //  print(self.leagues)
-        
-        //Display Your leagues
-        // var key   = Array(self.leagues.keys)[indexPath.row]
-        let leagueDetails = Array(self.leagues.values)[indexPath.row] as! [String :Any]
-        
-        let name = leagueDetails["Team Name"] as? String
-        let leagID = leagueDetails["leagID"] as? UInt32
-        let teamNameLBL = cell.viewWithTag(100) as! UILabel
-        let teamCodeLBL = cell.viewWithTag(200) as! UILabel
-        
-        teamNameLBL.text = name!
-        teamCodeLBL.text = "\(leagID!)"
-        
-        
         // Configure the cell...
-        // cell.textLabel?.text = "\(league)"
+        
+        //Display Score Item and Points
+        if let scoreItems = ScorePoints.shared[indexPath.row]{
+            
+            let scoreItemLBL = cell.viewWithTag(scoreItemTag) as! UILabel
+            let scorePointsLBL = cell.viewWithTag(scorePointTag) as! UILabel
+            
+            scoreItemLBL.text = scoreItems.scoreItem
+            scorePointsLBL.text = "\(scoreItems.points)"
+        }
         
         return cell
     }
     
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //  let match = Tournaments.shared[indexPath.row]!
-        let leagueDetails = Array(self.leagues.values)[indexPath.row] as! [String :Any]
-        let playersTVC = storyboard?.instantiateViewController(identifier: "LeaguePlayersTableViewController") as! LeaguePlayersTableViewController
-        
-        let leagID = leagueDetails["leagID"] as? UInt32
-        
-        self.leagueref?.child("leagues").observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let leaguecount = value?.count ?? 0
-            
-            
-            for i in 0..<leaguecount{
-                self.leagueref?.child("leagues/league\(i)").observeSingleEvent(of: .value, with: { (snapshot) in
-                    let value = snapshot.value as? NSDictionary
-                    let id =  value?["leagID"] as? UInt32 ?? 0
-                    let name = value?["Team Name"] as? String ?? ""
-                    let players = value?["players"] as? [String] ?? []
-                    
-                    if id == leagID {
-                        playersTVC.players = players
-                        NotificationCenter.default.post(name: NSNotification.Name("Match added"), object: nil)
-                    }
-                })
-            }
-        })
-        navigationController?.pushViewController(playersTVC, animated: true)
-        
-    }
     
     /*
      // Override to support conditional editing of the table view.
